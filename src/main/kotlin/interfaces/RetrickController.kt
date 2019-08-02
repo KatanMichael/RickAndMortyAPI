@@ -1,6 +1,7 @@
 package interfaces
 
 import models.Character
+import models.Location
 import models.Response
 import retrofit2.Call
 import retrofit2.http.GET
@@ -24,5 +25,13 @@ internal interface RetrickController
     status: String, @Query("species") species: String,
                               @Query("type") type: String,
                               @Query("gender") gender: String) :Call<Response>
+
+
+    @GET("location/")
+    fun getAllLocation() :Call<Response>
+
+    @GET("location/{ids}")
+    fun getLocationsByIds(@Path("ids") ids: String) :Call<List<Location>>
+
 
 }

@@ -1,6 +1,6 @@
 package models
 
-data class Location(
+data class Result(
     val created: String,
     val dimension: String,
     val id: Int,
